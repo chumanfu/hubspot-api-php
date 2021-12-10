@@ -1,0 +1,20 @@
+sudo: required
+dist: trusty
+language: php
+php:
+- 7.2
+- 7.3
+- 7.4
+- 8.0
+matrix:
+  allow_failures:
+  - php: hhvm
+  fast_finish: true
+before_script:
+- composer self-update
+- composer install --dev
+- composer require satooshi/php-coveralls:* --dev
+script:
+- mkdir build
+- mkdir build/coverage
+- vendor/bin/phpunit
