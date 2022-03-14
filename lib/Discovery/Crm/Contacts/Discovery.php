@@ -18,8 +18,4 @@ use HubSpot\Discovery\Crm\ObjectDiscovery;
  */
 class Discovery extends ObjectDiscovery
 {
-    public function gdprApi()
-    {
-        return new GDPRApi();
-    }
 }
